@@ -13,7 +13,8 @@ function messageFunc(){
 messageFunc()
 
 const obj = new messageFunc()
-obj.displayMessage()
+// this will through error message is hidden
+//obj.displayMessage()
 
-// Trying to access message from outside the function which defines it
-console.log("Message from outside: ",message);
+// Trying to access message from outside the function which defines it, error 
+//console.log("Message from outside: ",message);
