@@ -1,0 +1,28 @@
+The ES6 release introduced many new features that are not yet fully supported by all browsers. If we use ES6 or ES7 or ES8 features in our code, it might not work in some older browsers due to a lack of support for the new features. Besides syntax constructs and operators, new language features may also include built-in functions. Thus, we use polyfill along with a transpiler. A polyfill is a piece of code that adds functionality to older browsers that have incompatibility issues.
+
+In older browsers, the following features require polyfill support by explicitly defining the functions:
+
+Promises, Array.from, Array.includes, Array.of, Map, Set, Symbol, object.values, etc
+
+
+Both approaches serve the same purpose: You can write code, that uses some features, which are not yet implemented in your target environment. They do this, however, by using different techniques.
+
+A polyfill will try to emulate certain APIs, so can use them as if they were already implemented.
+
+A transpiler on the other hand will transform your code and replace the respective code section by other code, which can already be executed.
+
+Typically you use a polyfill, if your target browser did not yet implement the latest bleeding edge feature (read browser APIs) you want to use. A transpiler on the other hand will let you use language features, the target environment does not support yet, e.g. some ES6 features like fat arrow functions.
+
+
+The word polyfill is an invented term (by Remy Sharp) used to refer to taking the definition of a newer feature and producing a piece of code that’s equivalent to the behavior, but is able to run in older JS environments.
+
+https://stackoverflow.com/questions/31205640/what-is-the-difference-between-polyfill-and-transpiler
+
+
+Transpilation is at compile time, while pollyfill is at runtime, and this is what differentiates one from the other.
+
+Both pollyfill and transpilation enable you to use new features in old environments (old vs new browsers for example), the main difference is that a pollyfill do that by implementing the feature in the old environment itself. So if we go by Es6 Es5 terminology, polyfill enable you to use a new feature by implementing it in Es5, however some new features can never be implemented in Es5, think for example about the arrow syntax introduced by Es6 and this is where transpilation is needed.
+
+So an example where transpilation is needed is arrow syntax (() => {}) because u can never implement that in es5, and an example where a pollyfil can be used is for example if u wanted to implement the Array.prototype.includes method, you can easily implement it like this
+
+https://www.geeksforgeeks.org/how-to-use-polyfill-in-javascript/
